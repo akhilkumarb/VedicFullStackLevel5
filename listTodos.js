@@ -1,3 +1,6 @@
+/* eslint-disable semi */
+/* eslint-disable quotes */
+// eslint-disable-next-line semi
 const db = require("./models/index.js");
 
 const listTodos = async () => {

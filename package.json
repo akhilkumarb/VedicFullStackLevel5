@@ -4,7 +4,10 @@
   "description": "d",
   "main": "todo.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "db:create:test":"set NODE_ENV=test&& npx sequelize-cli db:create",
+    "pretest":"set NODE_ENV=test&& npx sequelize-cli db:drop && set NODE_ENV=test&& npx sequelize-cli db:create",
+    "test":"jest --detectOpenHandles",
+    "prepare":"husky install"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +22,15 @@
     "eslint-config-standard": "^17.1.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-n": "^16.6.1",
-    "eslint-plugin-promise": "^6.1.1"
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "lint-staged": "^15.2.0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint",
+      "prettier --write"
+    ]
   }
 }

@@ -1,3 +1,6 @@
+/* eslint-disable comma-dangle */
+/* eslint-disable semi */
+/* eslint-disable quotes */
 const argv = require("minimist")(process.argv.slice(2));
 const db = require("./models/index");
 
